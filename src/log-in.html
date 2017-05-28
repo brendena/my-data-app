@@ -43,6 +43,7 @@
         var signoutButton = this.$.signoutButton
         
         updateSigninStatus = function(isSignedIn) {
+          console.log(isSignedIn)
           if (isSignedIn) {
             authorizeButton.style.display = 'none';
             signoutButton.style.display = 'block';
@@ -52,12 +53,20 @@
           }
         }
         handleAuthClick = function(event) {
+          console.log("sign in")
           gapi.auth2.getAuthInstance().signIn();
-        }
+          console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
+
+
+        }
 
         handleSignoutClick = function(event) {
+          console.log("sign out")
           gapi.auth2.getAuthInstance().signOut();
+          console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
         }
+
+
         gapi.client.init({
           discoveryDocs: DISCOVERY_DOCS,
           clientId: CLIENT_ID,
@@ -70,7 +79,11 @@
           this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
-        });
+        }, function (reason) {
+            //This is never called
+            console.log("failed init!");
+            console.log(reason);
+        });
         
       }
     });
