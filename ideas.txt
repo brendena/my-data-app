@@ -1,7 +1,7 @@
 TODO
-//currently the only major problems are with routing.
-/shim working
-
+default page
+make sure it waights untill gamps is finished loading
+you can only go to a certain list of places else 404 error
 
 
 
