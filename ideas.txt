@@ -1,3 +1,11 @@
+TODO
+//currently the only major problems are with routing.
+/shim working
+
+
+
+
+
 so i'm thinking about edit most of this code.
 To make it into a class like object.
 so like
