@@ -3,6 +3,7 @@
   "authors": [
     "The Polymer Authors"
   ],
+  "main": "my-data-app.html",
   "license": "https://polymer.github.io/LICENSE.txt",
   "dependencies": {
     "app-layout": "PolymerElements/app-layout#^0.10.0",
