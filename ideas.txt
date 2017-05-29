@@ -1,5 +1,7 @@
 TODO
-default page
+can't seem to get the redraw to work right
+
+default page  kind of
 make sure it waights untill gamps is finished loading
 you can only go to a certain list of places else 404 error
 

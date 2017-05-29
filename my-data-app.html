@@ -23,6 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../iron-selector/iron-selector.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="./src/my-icons.html">
+<link rel="import" href="./src/log-in.html">
 
 <dom-module id="my-data-app">
   <template>
@@ -75,7 +76,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <a name="my-view2" href="#/my-view2">View Two</a>
           <a name="my-view3" href="#/my-view3">View Three</a>
           <a name="my-view4" href="#/my-view4">View Four</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2O3_mWyXEV028GgLH8FfLaT248u5qpIDermkfy2js2Bkh-A/viewform">Take Survey</a>
         </iron-selector>
+
       </app-drawer>
 
       <!-- Main content -->
@@ -84,9 +87,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+
             <div main-title>
                 My Data App
-              </div>
+            </div>
+            <log-in style="float:right; display:flex"></log-in>
           </app-toolbar>
         </app-header>
 
