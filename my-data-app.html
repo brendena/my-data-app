@@ -22,7 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../iron-pages/iron-pages.html">
 <link rel="import" href="../iron-selector/iron-selector.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
-
+<link rel="import" href="./src/my-icons.html">
 
 <dom-module id="my-data-app">
   <template>
@@ -66,7 +66,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       pattern="/:page"
       data="{{data}}"> 
 
-    <app-drawer-layout fullbleed>
+    <app-drawer-layout fullbleed force-narrow="[[forceNarrow]]">
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <app-toolbar>Menu</app-toolbar>
@@ -84,7 +84,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>My App</div>
+            <div main-title>
+                My Data App
+              </div>
           </app-toolbar>
         </app-header>
 
@@ -109,11 +111,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'my-data-app',
       properties: {
+        forceNarrow: {
+          type: Boolean,
+          value: false
+        },
         page: {
           type: String,
           reflectToAttribute: true,
           observer: '_pageChanged',
         },
+      },
+      drawerPanel: function(){
+        this.forceNarrow =  !this.forceNarrow;
+        this.$.drawer.toggle()
       },
       updatePage: function(event){
         /*
